@@ -1,0 +1,9 @@
+fastmcp>=0.3.0
+pydantic>=2.7
+google-api-python-client>=2.143.0
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.1
+openai>=1.45.0
+jsonschema>=4.23.0
+python-dotenv>=1.0.1
+rich>=13.8.1
