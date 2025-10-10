@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import List, Optional
 
 from pydantic import BaseModel, EmailStr, Field
-from fastmcp import FastMCP, tool
+from fastmcp import FastMCP
 
 from .gmail_service import send_email
 
@@ -19,8 +19,8 @@ class SendEmailInput(BaseModel):
 mcp = FastMCP("gmail-mcp")
 
 
-@tool(name="gmail.send_email", desc="Send an email via Gmail")
-def send_email(payload: SendEmailInput):
+@mcp.tool
+def gmail_send(payload: SendEmailInput):
     """
     Minimal wrapper around gmail_service.send_email.
     """
@@ -36,4 +36,4 @@ def send_email(payload: SendEmailInput):
 
 
 if __name__ == "__main__":
-    mcp.serve()
+    mcp.run()
